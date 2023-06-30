@@ -9,3 +9,9 @@ function createCell() {
 for (i = 0; i < 256; i++) {
     createCell();
 }
+
+const cell = document.querySelectorAll('.cell');
+cell.forEach(cell => {cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = 'black';
+    })
+});
