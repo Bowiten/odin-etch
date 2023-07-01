@@ -1,8 +1,6 @@
 const grid = document.querySelector('#grid');
 const gridWidth = 480;
 const newGridButton = document.querySelector('#new-grid');
-console.log(grid);
-console.log(gridWidth);
 
 newGridButton.addEventListener('click', () => {
     clearGrid();
