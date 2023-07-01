@@ -1,7 +1,10 @@
 const grid = document.querySelector('#grid');
-const newGrid = document.querySelector('#new-grid');
+const gridWidth = 480;
+const newGridButton = document.querySelector('#new-grid');
+console.log(grid);
+console.log(gridWidth);
 
-newGrid.addEventListener('click', () => {
+newGridButton.addEventListener('click', () => {
     clearGrid();
     let gridSize = 0;
     do {
@@ -9,7 +12,6 @@ newGrid.addEventListener('click', () => {
         gridSize = p;
     }
     while (gridSize < 0 || gridSize > 100)
-    grid.style.width = gridSize * 30 + 'px';
     createGrid(gridSize);
     addMouseover();
 });
@@ -32,6 +34,11 @@ function createGrid(gridSize) {
     for (i = 0; i < gridSize ** 2; i++) {
         addCell();
     }
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.style.width = gridWidth / gridSize + 'px';
+        cell.style.height = gridWidth / gridSize + 'px';
+    })
 }
 
 function clearGrid() {
